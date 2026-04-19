@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Georgia:ital,wght@0,400;0,700;1,400&family=Helvetica+Neue:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined');
+@import "tailwindcss";
+
+@theme {
+  --color-surface-lowest: #ffffff;
+  --color-surface: #fdfcfb;
+  --color-surface-low: #ffffff;
+  --color-surface-highest: #f4f3f0;
+  --color-surface-bright: #ffffff;
+
+  --color-primary: #c54b2a;
+  --color-primary-container: #c54b2a;
+  --color-on-primary-container: #ffffff;
+
+  --color-secondary: #b04326;
+  --color-secondary-container: #1a1a1a;
+
+  --color-error: #c54b2a;
+
+  --color-on-surface: #1a1a1a;
+  --color-on-surface-variant: rgba(26, 26, 26, 0.65);
+
+  --color-outline-variant: rgba(0, 0, 0, 0.1);
+
+  --font-headline: "Georgia", serif;
+  --font-body: "Georgia", serif;
+  --font-label: "Helvetica Neue", "Arial", sans-serif;
+
+  /* Flatten all rounded corners */
+  --radius: 0px;
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+}
+
+.icon-fill {
+  font-variation-settings: 'FILL' 1;
+}
+
+body {
+  @apply bg-surface text-on-surface font-body antialiased selection:bg-primary/30 selection:text-primary;
+}
+
+/* Kinetic Terminal Utilities Override to Editorial */
+.ghost-border { @apply border border-outline-variant; }
+.glow-amber { box-shadow: none !important; }
+.glow-emerald { box-shadow: none !important; }
+.ambient-shadow { box-shadow: none !important; }
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+.hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+.terminal-text { @apply font-body italic text-on-surface-variant !text-shadow-none; }
+.scanlines { display: none !important; }
+.shadow-inner { box-shadow: none !important; }
+
+/* Custom Editorial Classes */
+.serif-display { font-family: 'Georgia', serif; font-style: italic; }
+.sans-detail { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; }
+
+/* Force overrides for hardcoded border colors in old theme */
+.border-white\/\\[0\.05\\] { border-color: var(--color-outline-variant) !important; }
